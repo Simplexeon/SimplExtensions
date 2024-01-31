@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bwos6305nbhyr"]
+
+[ext_resource type="FontFile" uid="uid://dao6ugj6absti" path="res://SimplExtensions/MainMenu/Resources/OpenSans-Medium.ttf" id="1_6pm8a"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 5
+RichTextLabel/font_sizes/normal_font_size = 16
+RichTextLabel/fonts/normal_font = ExtResource("1_6pm8a")

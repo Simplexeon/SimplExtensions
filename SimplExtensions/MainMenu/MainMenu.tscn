@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5m8eaw7t78ux"]
+
+[ext_resource type="Script" path="res://SimplExtensions/MainMenu/ScreenControl.gd" id="1_fq3vj"]
+[ext_resource type="Script" path="res://SimplExtensions/MainMenu/CenterControl.gd" id="2_w5ngv"]
+[ext_resource type="Texture2D" uid="uid://cf6wuilf7aib5" path="res://SimplExtensions/MainMenu/Art/TiledBG.png" id="3_gla0t"]
+[ext_resource type="Texture2D" uid="uid://m1s5e0i5f5xt" path="res://SimplExtensions/MainMenu/Art/TitlePlaceholder.png" id="3_hx32a"]
+[ext_resource type="Script" path="res://SimplExtensions/MainMenu/TiledBG.gd" id="4_ikfom"]
+[ext_resource type="Script" path="res://SimplExtensions/MainMenu/Title.gd" id="4_wo6t8"]
+[ext_resource type="PackedScene" uid="uid://deuvtg77tggvd" path="res://SimplExtensions/MainMenu/MenuButton.tscn" id="7_kyofm"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="ScreenControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+script = ExtResource("1_fq3vj")
+
+[node name="CenterControl" type="Control" parent="ScreenControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_w5ngv")
+
+[node name="TiledBG" type="TextureRect" parent="ScreenControl/CenterControl"]
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -341.647
+offset_top = -158.353
+offset_right = 298.353
+offset_bottom = 201.647
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(320, 180)
+texture = ExtResource("3_gla0t")
+stretch_mode = 1
+script = ExtResource("4_ikfom")
+ScrollSpeed = 5.0
+ScrollDirection = Vector2(-0.707107, 0.707107)
+viewport_rect = Vector2(640, 360)
+max_distance = 56.5685
+
+[node name="Title" type="TextureRect" parent="ScreenControl/CenterControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -80.405
+offset_right = 40.0
+offset_bottom = -46.405
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(40, 17)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_hx32a")
+script = ExtResource("4_wo6t8")
+CenterOffset = Vector2(0, -63.405)
+Scale = 2.0
+
+[node name="PlayButton" parent="ScreenControl/CenterControl" instance=ExtResource("7_kyofm")]
+layout_mode = 1
+anchors_preset = 8
+offset_left = -32.0
+offset_top = 66.52
+offset_right = 32.0
+offset_bottom = 98.52
+Text = "Test"
+OffsetPosition = Vector2(0, 82.52)
+TextHeightModifier = 3.0
+base_pos = Vector2(288, 164)
+
+[node name="CreditsButton" parent="ScreenControl/CenterControl" instance=ExtResource("7_kyofm")]
+layout_mode = 1
+anchors_preset = 8
+offset_left = -32.0
+offset_top = 108.0
+offset_right = 32.0
+offset_bottom = 140.0
+stretch_mode = 2
+Text = "Credits"
+OffsetPosition = Vector2(0, 124)
+TextHeightModifier = 3.0
+base_pos = Vector2(288, 164)
