@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://opmugvgkhey"]
+
+[ext_resource type="Theme" uid="uid://bwos6305nbhyr" path="res://SimplExtensions/MainMenu/Resources/ButtonTheme.tres" id="1_n1y0y"]
+[ext_resource type="Texture2D" uid="uid://ba0empuj2gvsm" path="res://SimplExtensions/MainMenu/Art/ButtonNPlaceholder.png" id="1_oomne"]
+[ext_resource type="Script" path="res://SimplExtensions/MainMenu/SceneTextureButton.gd" id="1_tos8t"]
+[ext_resource type="Texture2D" uid="uid://dpcdxuoterdfo" path="res://SimplExtensions/MainMenu/Art/ButtonPPlaceholder.png" id="2_wuyg4"]
+[ext_resource type="Texture2D" uid="uid://dr61ig7xm7jt2" path="res://SimplExtensions/MainMenu/Art/ButtonHPlaceholder.png" id="3_he4fb"]
+
+[node name="SceneTextureButton" type="TextureButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n1y0y")
+texture_normal = ExtResource("1_oomne")
+texture_pressed = ExtResource("2_wuyg4")
+texture_hover = ExtResource("3_he4fb")
+script = ExtResource("1_tos8t")
+TextHeightModifier = 3.0
+base_pos = Vector2(320, 180)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(64, 27)
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]Play[/center]"
+fit_content = true
+scroll_active = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

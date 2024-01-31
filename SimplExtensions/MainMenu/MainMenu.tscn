@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5m8eaw7t78ux"]
+[gd_scene load_steps=14 format=3 uid="uid://b5m8eaw7t78ux"]
 
-[ext_resource type="Script" path="res://SimplExtensions/MainMenu/MainMenu.gd" id="1_3y75l"]
+[ext_resource type="Script" path="res://SimplExtensions/MainMenu/MenuManagerNode.gd" id="1_dxbqy"]
 [ext_resource type="Script" path="res://SimplExtensions/MainMenu/ScreenControl.gd" id="1_fq3vj"]
 [ext_resource type="Script" path="res://SimplExtensions/MainMenu/CenterControl.gd" id="2_w5ngv"]
 [ext_resource type="Texture2D" uid="uid://cf6wuilf7aib5" path="res://SimplExtensions/MainMenu/Art/TiledBG.png" id="3_gla0t"]
@@ -9,14 +9,13 @@
 [ext_resource type="Script" path="res://SimplExtensions/MainMenu/Title.gd" id="4_wo6t8"]
 [ext_resource type="Texture2D" uid="uid://md6wfgyh3aed" path="res://SimplExtensions/MainMenu/Art/StaticBGPlaceholder.png" id="5_7eo1c"]
 [ext_resource type="Script" path="res://SimplExtensions/MainMenu/StaticBG.gd" id="5_oc8lo"]
-[ext_resource type="PackedScene" uid="uid://deuvtg77tggvd" path="res://SimplExtensions/MainMenu/MenuButton.tscn" id="7_kyofm"]
 [ext_resource type="PackedScene" uid="uid://bjotwm87xr5ri" path="res://SimplExtensions/MainMenu/LinkedTextureButton.tscn" id="10_cc8dv"]
 [ext_resource type="Texture2D" uid="uid://davbcva4kfy8x" path="res://SimplExtensions/MainMenu/Art/ItchPlaceholder.png" id="11_ijfha"]
 [ext_resource type="Texture2D" uid="uid://dhqnlkid2o5f4" path="res://SimplExtensions/MainMenu/Art/DiscordPlaceholder.png" id="12_r1rv5"]
-[ext_resource type="Script" path="res://SimplExtensions/MainMenu/SceneTextureButton.gd" id="13_ejwpt"]
+[ext_resource type="PackedScene" uid="uid://opmugvgkhey" path="res://SimplExtensions/MainMenu/SceneTextureButton.tscn" id="13_cxomq"]
 
 [node name="MainMenu" type="Node2D" groups=["CSceneChange"]]
-script = ExtResource("1_3y75l")
+script = ExtResource("1_dxbqy")
 
 [node name="ScreenControl" type="Control" parent="."]
 layout_mode = 3
@@ -48,10 +47,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -321.938
-offset_top = -178.062
-offset_right = 318.062
-offset_bottom = 181.938
+offset_left = -324.695
+offset_top = -175.305
+offset_right = 315.305
+offset_bottom = 184.695
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -100,23 +99,6 @@ script = ExtResource("4_wo6t8")
 CenterOffset = Vector2(0, -63.405)
 Scale = 2.0
 
-[node name="PlayButton" parent="ScreenControl/CenterControl" instance=ExtResource("7_kyofm")]
-layout_mode = 1
-offset_top = 66.52
-offset_bottom = 98.52
-Text = "Test"
-OffsetPosition = Vector2(0, 82.52)
-TextHeightModifier = 3.0
-
-[node name="CreditsButton" parent="ScreenControl/CenterControl" instance=ExtResource("7_kyofm")]
-layout_mode = 1
-offset_top = 108.0
-offset_bottom = 140.0
-stretch_mode = 2
-Text = "Credits"
-OffsetPosition = Vector2(0, 124)
-TextHeightModifier = 3.0
-
 [node name="ItchButton" parent="ScreenControl/CenterControl" instance=ExtResource("10_cc8dv")]
 layout_mode = 0
 anchors_preset = 0
@@ -139,10 +121,28 @@ Link = "https://discord.gg/6XN3CpGPGU"
 Logo = ExtResource("12_r1rv5")
 OffsetPosition = Vector2(-238.085, 140.17)
 
-[node name="SceneTextureButton" type="TextureButton" parent="ScreenControl/CenterControl"]
+[node name="PlayButton" parent="ScreenControl/CenterControl" instance=ExtResource("13_cxomq")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("13_ejwpt")
+anchors_preset = 0
+offset_left = -32.0
+offset_top = 20.69
+offset_right = 32.0
+offset_bottom = 52.69
+pivot_offset = Vector2(32, 16)
+TargetScene = "res://SimplExtensions/MainMenu/SceneTextureButton.tscn"
+Text = "Play"
+OffsetPosition = Vector2(0, 36.69)
+base_pos = Vector2(288, 164)
 
-[connection signal="pressed" from="ScreenControl/CenterControl/SceneTextureButton" to="ScreenControl/CenterControl/SceneTextureButton" method="_on_pressed"]
+[node name="CreditsButton" parent="ScreenControl/CenterControl" instance=ExtResource("13_cxomq")]
+layout_mode = 0
+anchors_preset = 0
+offset_left = -32.0
+offset_top = 62.04
+offset_right = 32.0
+offset_bottom = 94.04
+pivot_offset = Vector2(32, 16)
+TargetScene = "res://SimplExtensions/MainMenu/LinkedTextureButton.tscn"
+Text = "Credits"
+OffsetPosition = Vector2(0, 78.04)
+base_pos = Vector2(288, 164)

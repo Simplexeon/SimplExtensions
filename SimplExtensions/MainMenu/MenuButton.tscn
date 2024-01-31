@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://bwos6305nbhyr" path="res://SimplExtensions/MainMenu/Resources/ButtonTheme.tres" id="1_t5d62"]
 [ext_resource type="Texture2D" uid="uid://dpcdxuoterdfo" path="res://SimplExtensions/MainMenu/Art/ButtonPPlaceholder.png" id="2_0migm"]
 [ext_resource type="Texture2D" uid="uid://dr61ig7xm7jt2" path="res://SimplExtensions/MainMenu/Art/ButtonHPlaceholder.png" id="3_n3flt"]
-[ext_resource type="Script" path="res://SimplExtensions/MainMenu/MenuButton.gd" id="4_k6bet"]
+[ext_resource type="Script" path="res://SimplExtensions/MainMenu/AutoTextureButton.gd" id="4_k6bet"]
 
 [node name="MenuButton" type="TextureButton"]
 anchors_preset = 8
@@ -25,9 +25,6 @@ texture_pressed = ExtResource("2_0migm")
 texture_hover = ExtResource("3_n3flt")
 stretch_mode = 3
 script = ExtResource("4_k6bet")
-Text = "Play"
-TextHeightModifier = 4.0
-base_pos = Vector2(288, 164)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
