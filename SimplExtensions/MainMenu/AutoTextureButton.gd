@@ -1,5 +1,6 @@
 @tool
 extends TextureButton
+class_name AutoTextureButton
 
 # Export Vars
 @export var Text : String :
@@ -73,3 +74,4 @@ func _ready() -> void:
 	Text = Text;
 	Scale = Scale;
 	OffsetPosition = OffsetPosition;
+	
