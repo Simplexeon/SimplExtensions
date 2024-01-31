@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5m8eaw7t78ux"]
+[gd_scene load_steps=12 format=3 uid="uid://b5m8eaw7t78ux"]
 
 [ext_resource type="Script" path="res://SimplExtensions/MainMenu/ScreenControl.gd" id="1_fq3vj"]
 [ext_resource type="Script" path="res://SimplExtensions/MainMenu/CenterControl.gd" id="2_w5ngv"]
@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://m1s5e0i5f5xt" path="res://SimplExtensions/MainMenu/Art/TitlePlaceholder.png" id="3_hx32a"]
 [ext_resource type="Script" path="res://SimplExtensions/MainMenu/TiledBG.gd" id="4_ikfom"]
 [ext_resource type="Script" path="res://SimplExtensions/MainMenu/Title.gd" id="4_wo6t8"]
+[ext_resource type="Texture2D" uid="uid://md6wfgyh3aed" path="res://SimplExtensions/MainMenu/Art/StaticBGPlaceholder.png" id="5_7eo1c"]
+[ext_resource type="Script" path="res://SimplExtensions/MainMenu/StaticBG.gd" id="5_oc8lo"]
 [ext_resource type="PackedScene" uid="uid://deuvtg77tggvd" path="res://SimplExtensions/MainMenu/MenuButton.tscn" id="7_kyofm"]
+[ext_resource type="PackedScene" uid="uid://bjotwm87xr5ri" path="res://SimplExtensions/MainMenu/LinkedTextureButton.tscn" id="10_cc8dv"]
+[ext_resource type="Texture2D" uid="uid://davbcva4kfy8x" path="res://SimplExtensions/MainMenu/Art/ItchPlaceholder.png" id="11_ijfha"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -40,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -341.647
-offset_top = -158.353
-offset_right = 298.353
-offset_bottom = 201.647
+offset_left = -345.169
+offset_top = -154.831
+offset_right = 294.831
+offset_bottom = 205.169
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -55,6 +59,20 @@ ScrollSpeed = 5.0
 ScrollDirection = Vector2(-0.707107, 0.707107)
 viewport_rect = Vector2(640, 360)
 max_distance = 56.5685
+
+[node name="StaticBG" type="TextureRect" parent="ScreenControl/CenterControl"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+pivot_offset = Vector2(320, 180)
+texture = ExtResource("5_7eo1c")
+script = ExtResource("5_oc8lo")
 
 [node name="Title" type="TextureRect" parent="ScreenControl/CenterControl"]
 layout_mode = 1
@@ -102,3 +120,14 @@ Text = "Credits"
 OffsetPosition = Vector2(0, 124)
 TextHeightModifier = 3.0
 base_pos = Vector2(288, 164)
+
+[node name="LinkedTextureButton" parent="ScreenControl/CenterControl" instance=ExtResource("10_cc8dv")]
+layout_mode = 0
+anchors_preset = 0
+offset_left = -296.0
+offset_top = 124.17
+offset_right = -264.0
+offset_bottom = 156.17
+Link = "https://simplexeon.itch.io/"
+Logo = ExtResource("11_ijfha")
+OffsetPosition = Vector2(-280, 140.17)
