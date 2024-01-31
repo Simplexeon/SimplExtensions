@@ -12,5 +12,5 @@ All of these scenes have been created in Godot using GDScript, and can be reconf
 
 
 ## Extensions
-- Universal Main Menu (v0.1.0)
+- Universal Main Menu (v0.2.0)
 - and more coming soon! (yeah just the one right now)
