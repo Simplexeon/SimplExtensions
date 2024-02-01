@@ -6,7 +6,6 @@
 
 [node name="Transition2D" type="Node2D"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(320, 180)
 scale = Vector2(1348, 596)
 script = ExtResource("1_4ylly")
 FreeOnEnd = null
