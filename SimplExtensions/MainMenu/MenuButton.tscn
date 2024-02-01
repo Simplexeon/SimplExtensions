@@ -25,6 +25,7 @@ texture_pressed = ExtResource("2_0migm")
 texture_hover = ExtResource("3_n3flt")
 stretch_mode = 3
 script = ExtResource("4_k6bet")
+base_pos = Vector2(288, 164)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -36,10 +37,10 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer"]
 clip_contents = false
-custom_minimum_size = Vector2(64, 27)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[center]Play[/center]"
+text = "[center][/center]"
 fit_content = true
 scroll_active = false

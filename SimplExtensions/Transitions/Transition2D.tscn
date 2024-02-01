@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3aj0h5s6qapr"]
+
+[ext_resource type="Script" path="res://SimplExtensions/Transitions/Transition2D.gd" id="1_4ylly"]
+[ext_resource type="Texture2D" uid="uid://d1lm6llb4y0as" path="res://SimplExtensions/Transitions/Resources/pixel.png" id="1_46pxo"]
+[ext_resource type="Material" uid="uid://d0wepq0gra4rl" path="res://SimplExtensions/Transitions/Resources/TransitionMat.tres" id="2_al8om"]
+
+[node name="Transition2D" type="Node2D"]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(1348, 596)
+script = ExtResource("1_4ylly")
+FreeOnEnd = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_al8om")
+texture = ExtResource("1_46pxo")
