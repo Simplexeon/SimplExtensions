@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d0wepq0gra4rl"]
+
+[ext_resource type="Shader" path="res://SimplExtensions/Transitions/Resources/FadeToBlack.gdshader" id="1_csfq4"]
+
+[resource]
+shader = ExtResource("1_csfq4")
+shader_parameter/time = 0.0
+shader_parameter/screen_size = Vector2(1, 1)
