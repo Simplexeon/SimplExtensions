@@ -5,13 +5,14 @@ extends TextureRect
 @export var ScrollSpeed : float = 0;
 @export var ScrollDirection : Vector2 = Vector2(1, 0) :
 	set(value):
-		ScrollDirection = value.normalized();
+		ScrollDirection = value;
+		using_dir = value.normalized();
 		#var reg_scroll : float = (viewport_rect.rotated(viewport_rect.angle_to(ScrollDirection)) * .5).length();
 		#var texture_length : float = (texture.get_size() * ScrollDirection).length();
 		#var texture_amount : float = reg_scroll / texture_length;
 		#scroll_dir_max = texture_length * texture_amount;
 		var a : float = texture.get_width() * scale.x;
-		var b : float = abs(ScrollDirection.angle_to(Vector2(1, 0)));
+		var b : float = abs(using_dir.angle_to(Vector2(1, 0)));
 		if(b > PI):
 			b = b - PI;
 		elif(b > (PI / 2)):
@@ -28,6 +29,7 @@ extends TextureRect
 
 # Object Vars
 var distance_moved : Vector2 = Vector2.ZERO;
+var using_dir : Vector2;
 
 
 # Processes
@@ -69,7 +71,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if(ScrollSpeed == 0):
 		return;
-	var frame_change : Vector2 = ScrollDirection * ScrollSpeed * delta;
+	var frame_change : Vector2 = using_dir * ScrollSpeed * delta;
 	position += frame_change;
 	distance_moved += frame_change;
 	#if(distance_moved.length() >= scroll_dir_max):
@@ -77,5 +79,5 @@ func _physics_process(delta: float) -> void:
 	#	distance_moved = distance_moved - (ScrollDirection * scroll_dir_max);
 	
 	if(distance_moved.length() >= max_distance):
-		position -= ScrollDirection * max_distance;
-		distance_moved -= ScrollDirection * max_distance;
+		position -= using_dir * max_distance;
+		distance_moved -= using_dir * max_distance;
