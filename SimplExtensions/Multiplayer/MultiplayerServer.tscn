@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpuou7kjf8ly2"]
+
+[ext_resource type="Script" path="res://SimplExtensions/Multiplayer/MultiplayerServer.gd" id="1_4xfuy"]
+
+[node name="MultiplayerServer" type="Node"]
+script = ExtResource("1_4xfuy")
