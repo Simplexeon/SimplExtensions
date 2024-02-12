@@ -13,6 +13,8 @@ extends TextureRect
 		#scroll_dir_max = texture_length * texture_amount;
 		var a : float = texture.get_width() * scale.x;
 		var b : float = abs(using_dir.angle_to(Vector2(1, 0)));
+		if(sign(value.x) == -1):
+			b = abs(using_dir.angle_to(Vector2(-1, 0)));
 		if(b > PI):
 			b = b - PI;
 		elif(b > (PI / 2)):
@@ -52,7 +54,7 @@ func _ready() -> void:
 		offset_right = 0;
 		
 		# Set Size
-		size = viewport_rect;
+		size = viewport_rect * 2;
 		
 		# Set Pivot Offset
 		pivot_offset = size * .5;
