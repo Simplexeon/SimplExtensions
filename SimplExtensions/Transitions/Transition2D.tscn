@@ -6,9 +6,8 @@
 
 [node name="Transition2D" type="Node2D"]
 modulate = Color(0, 0, 0, 1)
-scale = Vector2(1348, 596)
+scale = Vector2(2, 2)
 script = ExtResource("1_4ylly")
-FreeOnEnd = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("2_al8om")

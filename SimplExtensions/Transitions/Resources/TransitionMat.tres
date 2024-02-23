@@ -5,4 +5,5 @@
 [resource]
 shader = ExtResource("1_csfq4")
 shader_parameter/time = 0.0
-shader_parameter/screen_size = Vector2(1, 1)
+shader_parameter/screen_size = Vector2(2, 2)
+shader_parameter/modulate = Color(0, 0, 0, 1)

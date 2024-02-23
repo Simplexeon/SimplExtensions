@@ -12,7 +12,9 @@ func _ready() -> void:
 	Text = Text;
 	Scale = Scale;
 	OffsetPosition = OffsetPosition;
-	ResourceLoader.load_threaded_request(TargetScene);
+	if(TargetScene != ""):
+		ResourceLoader.load_threaded_request(TargetScene);
 
 func _on_pressed() -> void:
-	get_tree().call_group("CSceneChange", "_on_SceneChange", TargetScene);
+	if(TargetScene != ""):
+		get_tree().call_group("CSceneChange", "_on_SceneChange", TargetScene);

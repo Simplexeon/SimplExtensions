@@ -13,12 +13,8 @@ extends TextureRect
 		#scroll_dir_max = texture_length * texture_amount;
 		var a : float = texture.get_width() * scale.x;
 		var b : float = abs(using_dir.angle_to(Vector2(1, 0)));
-		if(sign(value.x) == -1):
+		if(b > PI * 1/2):
 			b = abs(using_dir.angle_to(Vector2(-1, 0)));
-		if(b > PI):
-			b = b - PI;
-		elif(b > (PI / 2)):
-			b = b - (PI / 2);
 		max_distance = a / (cos(b));
 
 @export var Scale : float = 2.0 :

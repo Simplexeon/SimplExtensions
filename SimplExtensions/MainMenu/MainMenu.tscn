@@ -16,6 +16,7 @@
 
 [node name="MainMenu" type="Node2D" groups=["CSceneChange"]]
 script = ExtResource("1_dxbqy")
+TransitionPath = "res://SimplExtensions/Transitions/Transition2D.tscn"
 
 [node name="ScreenControl" type="Control" parent="."]
 layout_mode = 3
@@ -47,10 +48,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -340.238
-offset_top = -213.265
-offset_right = 939.762
-offset_bottom = 506.735
+offset_left = -329.134
+offset_top = -161.312
+offset_right = 950.866
+offset_bottom = 558.688
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -59,9 +60,9 @@ texture = ExtResource("3_gla0t")
 stretch_mode = 1
 script = ExtResource("4_ikfom")
 ScrollSpeed = 30.0
-ScrollDirection = Vector2(-1, -1)
+ScrollDirection = Vector2(-1, 2)
 viewport_rect = Vector2(640, 360)
-max_distance = 56.5685
+max_distance = 89.4427
 
 [node name="StaticBG" type="TextureRect" parent="ScreenControl/CenterControl"]
 layout_mode = 1
