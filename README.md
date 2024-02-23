@@ -23,6 +23,7 @@ Features:
  - Link opening buttons
  - Tiled scrolling backgrounds
  - Static backgrounds
+ - Automatic transitions with TG
 
 *Note: This works best with unresizeable windows or viewport-style windows. Otherwise, you will need to change some things manually.*
 
@@ -36,7 +37,6 @@ Preset Transitions:
 
 ## ToDo
 
- - Implement transition functionality to UMM
  - Fade to black transition
  - Screen wipe transition
 
